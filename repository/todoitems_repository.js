@@ -57,7 +57,7 @@ const repository = (config) => {
 	const markAsComplete = (id) => {
 		return ToDoItem.update(
 		{
-			is complete: true
+			iscomplete: true
 		},
 		{
 			where: {
@@ -88,7 +88,7 @@ const repository = (config) => {
 			if (!connection) {
 				reject(new Error("Error connecting to database"));
 			}
-			
+
 			resolve(repository(connection));
 		});
 	}
